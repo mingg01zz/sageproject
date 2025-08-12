@@ -1,0 +1,237 @@
+/* FAQ 답변 페이지 스타일 */
+
+.faq-answer-main {
+    padding: 100px 0 40px 0;
+    background: #f8f9fa;
+    min-height: calc(100vh - 140px); /* 헤더와 footer 높이를 고려 */
+}
+
+.faq-answer-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 페이지 제목 영역 */
+.faq-answer-title-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.faq-answer-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.faq-answer-back-btn {
+    padding: 10px 20px;
+    background: #6c757d;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.faq-answer-back-btn:hover {
+    background: #5a6268;
+}
+
+/* FAQ 답변 내용 영역 */
+.faq-answer-content {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+/* 문의 섹션 */
+.faq-question-section {
+    padding: 30px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.faq-question-header {
+    margin-bottom: 20px;
+}
+
+.faq-question-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 15px 0;
+    line-height: 1.4;
+}
+
+.faq-question-meta {
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.faq-question-number {
+    font-weight: 600;
+    color: #007bff;
+}
+
+.faq-question-content {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* 답변 섹션 */
+.faq-answer-section {
+    padding: 30px;
+    background: #f8f9fa;
+}
+
+.faq-answer-header {
+    margin-bottom: 20px;
+}
+
+.faq-answer-subtitle {
+    font-size: 18px;
+    font-weight: 600;
+    color: #28a745;
+    margin: 0 0 15px 0;
+}
+
+.faq-answer-meta {
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.faq-answer-author {
+    font-weight: 600;
+    color: #28a745;
+}
+
+.faq-answer-content {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* 하단 버튼 영역 */
+.faq-answer-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.faq-answer-edit-btn,
+.faq-answer-delete-btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.faq-answer-edit-btn {
+    background: #007bff;
+    color: #fff;
+}
+
+.faq-answer-edit-btn:hover {
+    background: #0056b3;
+}
+
+.faq-answer-delete-btn {
+    background: #dc3545;
+    color: #fff;
+}
+
+.faq-answer-delete-btn:hover {
+    background: #c82333;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .faq-answer-main {
+        padding: 90px 0 30px 0;
+    }
+
+    .faq-answer-container {
+        padding: 0 15px;
+    }
+
+    .faq-answer-title-wrap {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+
+    .faq-answer-title {
+        font-size: 24px;
+    }
+
+    .faq-question-section,
+    .faq-answer-section {
+        padding: 20px;
+    }
+
+    .faq-question-title {
+        font-size: 18px;
+    }
+
+    .faq-question-meta,
+    .faq-answer-meta {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .faq-question-content,
+    .faq-answer-content {
+        font-size: 15px;
+        padding: 15px;
+    }
+
+    .faq-answer-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .faq-answer-edit-btn,
+    .faq-answer-delete-btn {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .faq-answer-title {
+        font-size: 20px;
+    }
+
+    .faq-question-section,
+    .faq-answer-section {
+        padding: 15px;
+    }
+
+    .faq-question-content,
+    .faq-answer-content {
+        font-size: 14px;
+        padding: 12px;
+    }
+} 
