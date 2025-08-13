@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>SAGE | 메인</title>
+
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+  <link rel="stylesheet" th:href="@{/css/header.css}">
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
+</head>
+<body>
+<header th:replace="header :: header"></header>
+
+<main class="main-ui-v3">
+  <div class="main-center">
+    <div class="main-banner-img main-banner-slider">
+      <button class="banner-arrow left" onclick="slideBanner(-1)">←</button>
+      <img id="mainBannerImg" th:src="@{/img/123.jpg}" alt="추천요양원 배너" />
+      <button class="banner-arrow right" onclick="slideBanner(1)">→</button>
+    </div>
+    <div class="main-searchbox main-searchbox-lg">
+      <div class="main-searchbar-row">
+        <select id="sidoSelect"><option>전체</option></select>
+        <select id="gugunSelect"><option>전체</option></select>
+        <select id="dongSelect"><option>전체</option></select>
+        <input type="text" placeholder="시설명을 입력해주세요">
+      </div>
+      <button class="main-search-btn" id="mainSearchBtn"><span class="icon-home"></span> 시설찾기 <span class="icon-arrow">→</span></button>
+    </div>
+    <div class="main-card-slider-wrapper">
+      <button class="main-card-arrow left" id="mainCardPrevBtn">←</button>
+      <div class="main-card-row" id="mainCardRow">
+        <div class="main-card" id="cardGrade"><div>요양등급알아보기</div><img th:src="@{/img/5.jpg}" alt="요양등급"></div>
+        <div class="main-card" id="cardPolicy"><div>노인지원정책 알아보기</div><img th:src="@{/img/6.png}" alt="지원정책"></div>
+        <div class="main-card" id="cardCompare"><div>나에게 맞는 요양원</div><img th:src="@{/img/4.jpg}" alt="나에게 맞는 요양원"></div>
+      </div>
+      <button class="main-card-arrow right" id="mainCardNextBtn">→</button>
+    </div>
+    <div class="main-btn-row">
+      <button class="main-btn" id="showNoticeBtn">공지</button>
+      <button class="main-btn" id="showFaqBtn">Q&A</button>
+    </div>
+    <div class="main-notice-box" id="mainNoticeBox">
+      <div class="main-notice-header">
+        <span>공지</span>
+        <a th:href="@{/notice}" class="main-notice-more">더보기</a>
+      </div>
+      <div class="main-notice-content">
+        <ul id="mainNoticeList">
+          <li data-id="1">2024-07-01 시스템 점검 안내</li>
+          <li data-id="2">2024-06-20 요양등급 정책 변경</li>
+          <li data-id="3">2024-06-10 신규 요양원 등록</li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-faq-box" id="mainFaqBox" style="display:none;">
+      <div class="main-notice-header">
+        <span>Q&A</span>
+        <a th:href="@{/faq}" class="main-notice-more">더보기</a>
+      </div>
+      <div class="main-notice-content">
+        <ul id="mainFaqList">
+          <li data-id="1">Q. 요양원 등급 기준이 궁금해요</li>
+          <li data-id="2">Q. 시설 비교는 어떻게 하나요?</li>
+          <li data-id="3">Q. 입소 절차가 어떻게 되나요?</li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-pick-section-v3">
+      <button class="main-pick-prev-btn" id="mainPickPrevBtn">←</button>
+      <div class="main-pick-list-v3" id="mainPickListV3">
+        <div class="pick-card-v3" onclick="window.open('https://www.youtube.com/watch?v=4zDk16TJUnk&t=1s','_blank')"><img th:src="@{/img/찔레꽃.png}" alt="유튜브1"><div>[서울노인복지센터] 찔레꽃 체조</div></div>
+        <div class="pick-card-v3" onclick="window.open('https://www.youtube.com/watch?v=AJrCXjPT1Pg','_blank')"><img th:src="@{/img/9988.png}" alt="유튜브2"><div>노인 맞춤형 건강 체조 "9988 체조" | 관절 움직임 근력 향상</div></div>
+        <div class="pick-card-v3" onclick="window.open('https://www.youtube.com/watch?v=-JWyAuNiEYI','_blank')"><img th:src="@{/img/박수체조.png}" alt="유튜브3"><div>내 나이가 어때서♪에 맞춰 '기억력 박수 체조' [건강하모 좋긋네]</div></div>
+        <div class="pick-card-v3" onclick="window.open('https://www.youtube.com/watch?v=R4CRmTIpwfU','_blank')"><img th:src="@{/img/노년기건강관리.png}" alt="유튜브4"><div>노년기 건강관리ㅣ3가지를 꼭 기억하세요 / 건강하게 늙는 법!</div></div>
+        <div class="pick-card-v3" onclick="window.open('https://www.youtube.com/watch?v=m3tq71zsBSw','_blank')"><img th:src="@{/img/2막.png}" alt="유튜브5"><div>건강한 인생 2막을 위하여! 노년기의 건강관리 편 [건강플러스]</div></div>
+        <div class="pick-card-v3" onclick="window.open('https://www.youtube.com/watch?v=Ylr_s0CCTB0','_blank')"><img th:src="@{/img/장수.png}" alt="유튜브6"><div>건강하게 장수하는 비결 1가지</div></div>
+        <div class="pick-card-v3 more-card" onclick="location.href='youtube.html'"><div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:1.2em;font-weight:700;">=> 더 알아보기</div></div>
+      </div>
+      <button class="main-pick-prev-btn" id="mainPickPrevBtn">→</button>
+    </div>
+  </div>
+</main>
+
+<footer th:replace="footer :: footer"></footer>
+
+
+
+
+<div class="chatbot-container" id="chatbotContainer">
+  <div class="chatbot-header">
+    SAGE 챗봇
+    <span class="chatbot-close-btn" id="chatbotCloseBtn">&times;</span>
+  </div>
+  <div class="chatbot-messages" id="chatbotMessages">
+    <div class="message bot">안녕하세요, SAGE 챗봇입니다. 무엇을 도와드릴까요?</div>
+  </div>
+  <div class="chatbot-input">
+    <input type="text" id="chatbotInput" placeholder="메시지를 입력하세요...">
+    <button id="chatbotSendBtn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send-horizontal"><path d="m3 3 3 9-3 9 19-9Z"/><path d="M6 12h16"/></svg>
+    </button>
+  </div>
+</div>
+
+
+<button class="chatbot-fab" id="chatbotFab" title="챗봇"><img th:src="@{/img/pngegg.png}" alt="챗봇" style="width:28px;height:28px;"></button>
+<button class="top-fab" title="맨 위로" onclick="window.scrollTo({top:0,behavior:'smooth'})">⇧</button>
+
+<script th:src="@{/js/main.js}"></script>
+<script>
+  // 메인배너 슬라이드 (이미지 3개)
+  const bannerImgs = [
+    'img/123.jpg',
+    'img/444.jpg',
+    'img/555.jpg'
+  ];
+  let bannerIdx = 0;
+  function slideBanner(dir) {
+    bannerIdx = (bannerIdx + dir + bannerImgs.length) % bannerImgs.length;
+    document.getElementById('mainBannerImg').src = bannerImgs[bannerIdx];
+  }
+  // 맨위로 버튼 노출 제어
+  const topFab = document.querySelector('.top-fab');
+  window.addEventListener('scroll', function() {
+    if(window.scrollY > 120) topFab.style.display = 'block';
+    else topFab.style.display = 'none';
+  });
+  topFab.style.display = 'none';
+  // 공지/FAQ 토글 기능
+  document.getElementById('showNoticeBtn').onclick = function() {
+    document.getElementById('mainNoticeBox').style.display = '';
+    document.getElementById('mainFaqBox').style.display = 'none';
+  };
+  document.getElementById('showFaqBtn').onclick = function() {
+    document.getElementById('mainNoticeBox').style.display = 'none';
+    document.getElementById('mainFaqBox').style.display = '';
+  };
+  // 시설찾기/카드 클릭 이동
+  document.getElementById('mainSearchBtn').onclick = function() {
+    var sido = document.getElementById('sidoSelect').value;
+    var gugun = document.getElementById('gugunSelect').value;
+    var dong = document.getElementById('dongSelect').value;
+    var keyword = document.querySelector('.main-searchbar-row input[type="text"]').value.trim();
+    if ((sido === '전체' || !sido) && (gugun === '전체' || !gugun) && (dong === '전체' || !dong) && !keyword) {
+      alert('검색 조건(지역 또는 시설명)을 입력해 주세요.');
+      return;
+    }
+    location.href = 'index.html';
+  };
+  document.getElementById('cardGrade').onclick = function() {
+    location.href = 'grade.html';
+  };
+  document.getElementById('cardPolicy').onclick = function() {
+    location.href = 'policy.html';
+  };
+  document.getElementById('cardCompare').onclick = function() {
+    location.href = 'index.html';
+  };
+  // 공지/FAQ 리스트 클릭 시 상세로 이동
+  document.querySelectorAll('#mainNoticeList li').forEach(function(li) {
+    li.style.cursor = 'pointer';
+    li.onclick = function() {
+      const id = li.getAttribute('data-id');
+      location.href = `/notice/detail?n=${id}`;
+    };
+  });
+  document.querySelectorAll('#mainFaqList li').forEach(function(li) {
+    li.style.cursor = 'pointer';
+    li.onclick = function() {
+      const id = li.getAttribute('data-id');
+      location.href = `/faq/detail?n=${id}`;
+    };
+  });
+
+
+
+
+
+  // 챗봇 기능 추가
+    const chatbotFab = document.getElementById('chatbotFab');
+    const chatbotContainer = document.getElementById('chatbotContainer');
+    const chatbotCloseBtn = document.getElementById('chatbotCloseBtn');
+    const chatbotInput = document.getElementById('chatbotInput');
+    const chatbotSendBtn = document.getElementById('chatbotSendBtn');
+    const chatbotMessages = document.getElementById('chatbotMessages');
+
+    const API_ENDPOINT = '/chat'; // 스프링 컨트롤러의 API 엔드포인트
+
+    chatbotFab.addEventListener('click', () => {
+        chatbotContainer.style.display = 'block';
+        chatbotFab.style.display = 'none';
+    });
+
+    chatbotCloseBtn.addEventListener('click', () => {
+        chatbotContainer.style.display = 'none';
+        chatbotFab.style.display = 'block';
+    });
+
+    function addMessage(message, sender) {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('message', sender);
+        messageDiv.innerText = message;
+        chatbotMessages.appendChild(messageDiv);
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight; // 스크롤을 맨 아래로
+    }
+
+    async function sendMessage() {
+        const message = chatbotInput.value.trim();
+        if (message === '') return;
+
+        addMessage(message, 'user');
+        chatbotInput.value = '';
+
+        try {
+            const response = await fetch(API_ENDPOINT, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ sender: 'web_user', message: message }),
+            });
+            const data = await response.json();
+
+            // Rasa 응답은 리스트 형태로 오며, 각 요소는 텍스트를 포함
+            if (data && data.length > 0) {
+                data.forEach(item => {
+                    if (item.text) {
+                        addMessage(item.text, 'bot');
+                    }
+                });
+            } else {
+                addMessage('죄송합니다. 이해하지 못했습니다.', 'bot');
+            }
+        } catch (error) {
+            console.error('Error fetching from Rasa:', error);
+            addMessage('챗봇 서버에 연결할 수 없습니다. 잠시 후 다시 시도해주세요.', 'bot');
+        }
+    }
+
+    chatbotSendBtn.addEventListener('click', sendMessage);
+    chatbotInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            sendMessage();
+        }
+    });
+</script>
+</body>
+</html>
